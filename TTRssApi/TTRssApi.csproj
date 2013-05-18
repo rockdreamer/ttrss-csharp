@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A7DE0C7-152F-42ED-8C54-F741A307BAB1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TTRssApi</RootNamespace>
+    <AssemblyName>TTRssApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiCommands\CatchupFeed.cs" />
+    <Compile Include="ApiCommands\GetApiLevel.cs" />
+    <Compile Include="ApiCommands\GetArticle.cs" />
+    <Compile Include="ApiCommands\GetCategories.cs" />
+    <Compile Include="ApiCommands\GetConfig.cs" />
+    <Compile Include="ApiCommands\GetCounters.cs" />
+    <Compile Include="ApiCommands\GetFeeds.cs" />
+    <Compile Include="ApiCommands\GetFeedTree.cs" />
+    <Compile Include="ApiCommands\GetHeadlines.cs" />
+    <Compile Include="ApiCommands\GetLabels.cs" />
+    <Compile Include="ApiCommands\GetPref.cs" />
+    <Compile Include="ApiCommands\GetUnread.cs" />
+    <Compile Include="ApiCommands\GetVersion.cs" />
+    <Compile Include="ApiCommands\IsLoggedIn.cs" />
+    <Compile Include="ApiCommands\Login.cs" />
+    <Compile Include="ApiCommands\Logout.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ApiCommands\SetArticleLabel.cs" />
+    <Compile Include="ApiCommands\ShareToPublished.cs" />
+    <Compile Include="ApiCommands\SubscribeToFeed.cs" />
+    <Compile Include="TTRssApi.cs" />
+    <Compile Include="TTRssApiRequest.cs" />
+    <Compile Include="TTRssApiResponse.cs" />
+    <Compile Include="TTRssLoginInfo.cs" />
+    <Compile Include="ApiCommands\UnsubscribeFeed.cs" />
+    <Compile Include="ApiCommands\UpdateArticle.cs" />
+    <Compile Include="ApiCommands\UpdateFeed.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
